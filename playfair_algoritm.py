@@ -1,11 +1,8 @@
-#playfair
 
 import re
 from enum import Enum
 
-
 LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
-
 
 class Playfair:
     @staticmethod
@@ -73,39 +70,13 @@ class Playfair:
         return ' '.join(rule1(self.transform(s, -1)) for s in msg)
 
 
-def test():
-    p = Playfair("Imagine there's no heaven")
-    plain = [
-        'I am a new soul, I came to this strange world',
-        'Starry starry night, paint your palette blue and grey',
-        'I crown me king of the sweet cold north',
-        'If I die young, bury me in satin',
-        "Come gather 'round people, wherever you roam",
-        'Somewhere over the rainbow'
-    ]
-    encrypted = [
-        'MG AG IS ZT FI FA BG IT EV HR NE EH HG IN TU CE QB',
-        'EH GH CG EH GH CG IM AR RK GM MS UC YE LG FH HW HT LX IO GI CN ST ZY',
-        'GO EC ZM IT FM IN FU HR TE UT TH DV QB ID SH BA',
-        'EU NO EO UC ZI AC YE WG OE SD MH MI',
-        'DV IT NG HR TS EC ZI CQ OF QP TU RT ST OT CG FI EC GA',
-        'ED IT XT TS OF OT SH RT HG MI CV XY'
-    ]
-    decrypted = [
-        'IA MA NE WS OU LI CA ME TO TH IS ST RA NG EW OR LD',
-        'ST AR RY ST AR RY NI GH TP AI NT YO UR PA LE T TE BL UE AN DG RE Y',
-        'IC RO WN ME KI NG OF TH ES WE ET CO LD NO RT H',
-        'IF ID IE YO UN GB UR YM EI NS AT IN',
-        'CO ME GA TH ER RO UN DP EO PL EW HE RE VE RY OU RO AM',
-        'SO ME WH ER EO VE RT HE RA IN BO W'
-    ]
-    # assert [p.encrypt(i) for i in plain] == encrypted
-    print("encrypted code :\n")
-    [print(p.encrypt(i)) for i in plain]
-    # assert [p.decrypt(i) for i in encrypted] == decrypted
-    print("decrypted code : \n")
-    [print(p.decrypt(i)) for i in encrypted]
+p = Playfair("Imagine there's no heaven")
 
+plain = 'I am a new soul, I came to this strange world'
+enc=p.encrypt(plain)
+print("encrypted message :")
+print(enc)
 
-
-test()
+decr=p.decrypt(enc)
+print("decrypted message : ")
+print(decr)

@@ -22,5 +22,6 @@ the repository contains some famous ciphers
 <br>
 [rail fence](https://github.com/warriorwizard/cryptography_ciphers/blob/main/rail_fence_cipher.py)
 <br>
+[mac](https://github.com/warriorwizard/cryptography_ciphers/blob/main/mac_.py)
 
 please contibute to this project 💕
